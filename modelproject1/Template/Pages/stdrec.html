@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Student recors fetch form data base</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+     
+          <h1>---- Student Records ----</h1>
+          <hr>
+          <h3>view the bellow student recors from sqllite data base</h3>
+
+          {% if data %}
+          <table>
+            <tr>
+                <td>SNO</td>
+                <td>SNAME</td>
+                <td>SROLLNO</td>
+                <td>SCRS</td>
+                <td>CNAME</td>
+            </tr>
+          {% for i in data %}
+          <tr>
+            <td>{{i.sno}}</td>
+            <td>{{i.sname}}</td>
+            <td>{{i.srollno}}</td>
+            <td>{{i.csr}}</td>
+            <td>{{i.cname}}</td>
+          </tr>
+            
+          {% endfor %}
+          </table>
+          {% else %}
+           <p>record not found</p> 
+          {% endif %}       
+
+        <script src="" async defer></script>
+    </body>
+</html>
